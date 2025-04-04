@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/contacto.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="/assets/imagenes/mifoto.jpg">
+    <title>Contacto</title>
+</head>
+<body>
+    <header class="header">
+        <a href="/index.html" class="logo">Karim
+            <span>Salim</span>
+            <i class='bx bx-menu' id="menu-icon"></i>
+        </a>
+    
+        <div class="profile">
+            <img src="/assets/imagenes/mifoto.jpg" alt="profile picture">
+        </div>
+    
+        <nav class="navbar">
+            <a href="../index.html">Inicio</a>
+            <a href="educacion.html">Educacion</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="testimonios.html">Testimonios</a>
+            <a href="contacto.html" class="active">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact">
+            <h2 class="heading">Contáctame</h2>
+            <form id="contact-form">
+                <div class="input-box">
+                    <input type="text" name="nombre" placeholder="Nombre completo" required>
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="empresa" placeholder="Nombre de la empresa">
+                    <input type="tel" name="telefono" placeholder="Número de teléfono">
+                </div>
+                <div class="input-box">
+                    <select name="tipo_proyecto" required>
+                        <option value="">¿Qué tipo de proyecto necesitas?</option>
+                        <option value="web">Página Web</option>
+                        <option value="app">Aplicación Móvil</option>
+                        <option value="uiux">Diseño UI/UX</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <select name="plazo" required>
+                        <option value="">¿En qué plazo lo necesitas?</option>
+                        <option value="1mes">1 mes</option>
+                        <option value="2meses">2 meses</option>
+                        <option value="3meses">3 meses o más</option>
+                        <option value="urgente">Urgente</option>
+                    </select>
+                </div>
+                <textarea name="mensaje" placeholder="Describe tu proyecto..." required></textarea>
+                <button type="submit" class="btn">Enviar mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const message = `
+                Nuevo contacto:
+                Nombre: ${formData.get('nombre')}
+                Email: ${formData.get('email')}
+                Teléfono: ${formData.get('telefono') || 'No proporcionado'}
+                Empresa: ${formData.get('empresa') || 'No proporcionada'}
+                Tipo de proyecto: ${formData.get('tipo_proyecto')}
+                Plazo: ${formData.get('plazo')}
+                Mensaje: ${formData.get('mensaje')}
+            `;
+            
+            window.open(`https://wa.me/+543813256714?text=${encodeURIComponent(message)}`, '_blank');
+        });
+    </script>
+</body>
+</html>

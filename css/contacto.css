@@ -1,0 +1,70 @@
+.contact {
+    padding: 13rem 12%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Cambia de center a flex-start */
+    margin-top: 200px;
+    margin-left: 850px; /* Añade un margen izquierdo para desplazar el formulario */
+    max-width: 1300px; /* Limita el ancho para que no se extienda demasiado */
+}
+
+.heading {
+    font-size: 7rem;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+
+.heading span {
+    color: red;
+}
+
+#contact-form {
+    width: 100%;
+    max-width: 700px;
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.input-box input,
+.input-box select {
+    width: 48%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: 1rem;
+    border: 2px solid red;
+    margin-bottom: 1rem;
+}
+
+.input-box input::placeholder,
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: 1rem;
+    border: 2px solid red;
+    resize: vertical;
+    margin-bottom: 2rem;
+}
+
+#contact-form .btn {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+}
